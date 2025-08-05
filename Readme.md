@@ -336,3 +336,95 @@ True + 10                   # 11
 ```
 
 ---
+=============================
+# Python String & List Operations Notes
+
+## String Slicing & Indexing
+```python
+name = 'harshita'
+print(name)                # harshita
+slice_name = name[0:5]
+print(slice_name)          # harsh
+name[-1]                   # 'a'
+
+num_list = "0123456789"
+num_list[3:]               # '3456789'
+num_list[:7]               # '0123456'
+num_list[:7:2]             # '0246'
+num_list[0:7:4]            # '04'
+num_list[0:7:10]           # '0'
+```
+
+## String Methods
+```python
+username = "Harshita"
+username.lower()           # 'harshita'
+username.upper()           # 'HARSHITA'
+
+name = '                        harshita'
+name.strip()               # 'harshita'
+print(name.replace('harshita', 'harshu'))  # '                        harshu'
+
+name = "harshita rajoria girl"
+print(name.split(" "))     # ['harshita', 'rajoria', 'girl']
+print(name.find('h'))      # 0
+print(name.find('s'))      # 3
+print(name.count("h"))     # 2
+print(name.count("a"))     # 4
+print(name.count("g"))     # 1
+print(name.count("girl"))  # 1
+```
+
+## String Formatting
+```python
+name = 'harshita'
+age = 20
+statement = "my {} is and my age is {}"
+statement.format(name, age)    # 'my harshita is and my age is 20'
+```
+
+## Joining Strings
+```python
+names = ["harshita", "rajoria", "girl"]
+print("".join(names))          # harshitarajoriagirl
+print("#*#".join(names))       # harshita#*#rajoria#*#girl
+print("_._".join(names))       # harshita_._rajoria_._girl
+```
+
+## Length
+```python
+len(name)                      # 8
+len(names)                     # 3
+```
+
+## Iterating Over Strings
+```python
+for letter in name:
+    print(letter)
+# Output:
+# h
+# a
+# r
+# s
+# h
+# i
+# t
+# a
+```
+
+## String Quotes & Escape Characters
+```python
+name = "my name is 'harshita rajoria' "
+name = 'my name is "harshita rajoria" '
+name = "harshita\nrajoria"
+print(name)
+# Output:
+# harshita
+# rajoria
+```
+
+## Membership Test
+```python
+name = 'harshita rajoria'
+("harshita" in name)           # True
+("harshittta" in name)         #
