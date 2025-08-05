@@ -428,3 +428,111 @@ print(name)
 name = 'harshita rajoria'
 ("harshita" in name)           # True
 ("harshittta" in name)         #
+
+======================
+# Python List Operations & Control Flow Notes
+
+## List Indexing & Slicing
+```python
+names = ['harshita', 'rajoria', 'cute', 'girl']
+names[-1]           # 'girl'
+names[0]            # 'harshita'
+names[1:3]          # ['rajoria', 'cute']
+```
+
+## List Modification
+```python
+names[0] = 'vishnu'
+names                  # ['vishnu', 'rajoria', 'cute', 'girl']
+
+names[1:2] = 'yatisha'
+names                  # ['vishnu', 'y', 'a', 't', 'i', 's', 'h', 'a', 'cute', 'girl']
+
+names[1:1] = ['yasu', 'khushi']
+names                  # ['vishnu', 'yasu', 'khushi', 'y', 'a', 't', 'i', 's', 'h', 'a', 'cute', 'girl']
+```
+
+## Iterating Over Lists
+```python
+for i in names:
+    print(i)
+# Output:
+# vishnu
+# yasu
+# khushi
+# y
+# a
+# t
+# i
+# s
+# h
+# a
+# cute
+# girl
+
+for i in names:
+    print(i, end=" ")
+# Output: vishnu yasu khushi y a t i s h a cute girl 
+```
+
+## Conditional Statements
+```python
+if 1 > 2:
+    print("yes")    # (No output)
+
+if 1 < 2:
+    print(True)     # True
+
+if 1 < 2:
+    print(True)
+else:
+    print(False)    # True
+
+if 1 < -2:
+    print(True)
+else:
+    print(False)    # False
+```
+
+## Membership Test
+```python
+if "harsita" in names:
+    print(True)     # (No output)
+
+if "harshita" in names:
+    print(True)     # (No output)
+
+if "yasu" in names:
+    print(True)     # True
+```
+
+## List Methods
+```python
+names.pop()         # 'girl'
+names               # ['vishnu', 'yasu', 'khushi', 'y', 'a', 't', 'i', 's', 'h', 'a', 'cute']
+
+names.remove('yasu')
+names               # ['vishnu', 'khushi', 'y', 'a', 't', 'i', 's', 'h', 'a', 'cute']
+
+names.insert(1, 'yasu')
+names               # ['vishnu', 'yasu', 'khushi', 'y', 'a', 't', 'i', 's', 'h', 'a', 'cute']
+```
+
+## List Copying & References
+```python
+names_copy = names
+names_copy is names      # True
+
+names_copy = names.copy()
+names_copy is names      # False
+
+names.append("mummy")
+names_copy.append("papa")
+names                   # ['vishnu', 'yasu', 'khushi', 'y', 'a', 't', 'i', 's', 'h', 'a', 'cute', 'mummy']
+names_copy              # ['vishnu', 'yasu', 'khushi', 'y', 'a', 't', 'i', 's', 'h', 'a', 'cute', 'papa']
+```
+
+## List Comprehension
+```python
+squared_num = [x**2 for x in range(10)]
+squared_num            # [0, 1, 4, 9, 16, 25, 36, 49,
