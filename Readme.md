@@ -645,3 +645,65 @@ new_dict = dict.fromkeys(keys, default_value)
 
 new_dict = dict.fromkeys(keys, keys)
 # Output: {'Masala': ['Masala', 'ginger', 'lemon'],
+
+===============================================================================
+# Python Tuple Operations – Notes
+
+## Creating a Tuple
+
+```python
+names = ("harshita", "yatisha", "vishnu")
+```
+
+## Accessing Tuple Elements
+
+```python
+names[0]      # Output: 'harshita'
+names[-1]     # Output: 'vishnu'
+names[:-1]    # Output: ('harshita', 'yatisha')
+```
+
+## Immutability
+
+Tuples are immutable; you cannot change their elements:
+
+```python
+names[0] = 'suman'  # Raises TypeError
+```
+
+## Tuple Length
+
+```python
+len(names)  # Output: 3
+```
+
+## Concatenation
+
+```python
+more_names = ("suman", "yatesh")
+all_names = names + more_names
+# Output: ('harshita', 'yatisha', 'vishnu', 'suman', 'yatesh')
+```
+
+## Membership Test
+
+```python
+if "harshita" in all_names:
+    print("yummyyyyyyyyyyyyyyy")
+# Output: yummyyyyyyyyyyyyyyy
+```
+
+## Counting Occurrences
+
+```python
+all_names.count('suman')  # Output: 1
+```
+
+## Tuple Unpacking
+
+```python
+names = ('khushi', 'yasu')
+(harshita, yatisha) = names
+# harshita = 'khushi'
+# yatisha = 'yasu'
+```
