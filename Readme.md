@@ -536,3 +536,112 @@ names_copy              # ['vishnu', 'yasu', 'khushi', 'y', 'a', 't', 'i', 's', 
 ```python
 squared_num = [x**2 for x in range(10)]
 squared_num            # [0, 1, 4, 9, 16, 25, 36, 49,
+
+===============================================================================
+# Python Dictionary Operations – Notes
+
+## Creating a Dictionary
+
+```python
+names = {"name": "harshita", "surname": "rajoria", "age": 23}
+```
+
+## Accessing Values
+
+```python
+names["name"]  # Output: 'harshita'
+```
+
+## Iterating Over a Dictionary
+
+```python
+for key in names:
+    print(key, names.get(key))
+# Output:
+# name harshita
+# surname rajoria
+# age 23
+```
+
+## Checking for Keys
+
+```python
+if "name" in names:
+    print("yayyyy")
+# Output: yayyyy
+```
+
+## Modifying Values
+
+```python
+names["name"] = "yatisha"
+```
+
+## Adding a New Key-Value Pair
+
+```python
+names["sis_name"] = "harshita"
+```
+
+## Removing Items
+
+```python
+names.pop("sis_name")   # Removes 'sis_name'
+names.popitem()         # Removes the last inserted item
+del names["name"]       # Deletes the key 'name'
+```
+
+## Copying Dictionaries
+
+```python
+names_copy = names.copy()
+```
+
+- `names == names_copy` checks if contents are equal (True)
+- `names is names_copy` checks if they are the same object (False)
+
+## Nested Dictionaries
+
+```python
+tea_shop = {
+    "chai": {"masala": "spicy", "ginger": "zesty"},
+    "tea": {"green": "mild", "black": "strong"}
+}
+```
+
+Access nested values:
+
+```python
+tea_shop["chai"]["ginger"]  # Output: 'zesty'
+```
+
+Iterate through nested dictionaries:
+
+```python
+for i in tea_shop:
+    for j in tea_shop[i]:
+        print(tea_shop[i][j])
+# Output:
+# spicy
+# zesty
+# mild
+# strong
+```
+
+## Dictionary Comprehensions
+
+```python
+squared_num = {x: x**2 for x in range(10)}
+# Output: {0: 0, 1: 1, ..., 9: 81}
+```
+
+## Using `fromkeys` to Create Dictionaries
+
+```python
+keys = ["Masala", "ginger", "lemon"]
+default_value = "yummy"
+new_dict = dict.fromkeys(keys, default_value)
+# Output: {'Masala': 'yummy', 'ginger': 'yummy', 'lemon': 'yummy'}
+
+new_dict = dict.fromkeys(keys, keys)
+# Output: {'Masala': ['Masala', 'ginger', 'lemon'],
