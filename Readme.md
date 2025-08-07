@@ -707,3 +707,57 @@ names = ('khushi', 'yasu')
 # harshita = 'khushi'
 # yatisha = 'yasu'
 ```
+
+===============================================
+
+# Python Function, Global Variable, and Closure Notes
+
+## Function Definition & Scope
+
+```python
+name = 'harshita'
+name                # 'harshita'
+
+def test():
+    name = "rajoria"
+    print(name)
+
+test()              # Output: rajoria
+name                # 'harshita'
+```
+- Variables defined inside a function are local to that function.
+- The global variable `name` remains unchanged outside the function.
+
+## Global Keyword
+
+```python
+x = 99
+
+def fun():
+    global x
+    x = 100
+
+print(x)    # 99
+fun()
+print(x)    # 100
+```
+- Use the `global` keyword to modify a variable defined in the global scope from inside a function.
+
+## Closures
+
+```python
+def chaicoder(num):
+    def actual(x):
+        return x ** num
+    return actual
+
+f = chaicoder(2)
+g = chaicoder(3)
+
+print(f)        # <function chaicoder.<locals>.actual at ...>
+print(g)        # <function chaicoder.<locals>.actual at ...>
+print(f(3))     # 9
+print(g(3))     # 27
+```
+- A closure is a function object that remembers values in enclosing scopes even if they are not present in memory.
+- Here, `f` and `g` are functions that "remember" the value of `num` passed to `chaicoder
